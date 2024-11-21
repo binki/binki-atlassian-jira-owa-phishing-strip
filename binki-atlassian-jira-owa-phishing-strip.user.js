@@ -35,6 +35,7 @@
             method: 'PUT',
           });
           changeMade = true;
+          break;
         } catch (ex) {
           if (lastTry) throw ex;
         }
@@ -57,6 +58,7 @@
               method: 'PUT',
             });
             changeMade = true;
+            break;
           } catch (ex) {
             if (lastTry) throw ex;
           }
