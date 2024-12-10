@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name binki-atlassian-jira-owa-phishing-strip
-// @version 1.2.0
+// @version 1.2.1
 // @match https://*.atlassian.net/*
 // @homepageURL https://github.com/binki/binki-atlassian-jira-owa-phishing-strip
 // @require https://github.com/binki/binki-userscript-delay-async/raw/252c301cdbd21eb41fa0227c49cd53dc5a6d1e58/binki-userscript-delay-async.js
