@@ -175,6 +175,10 @@ function removeEmptyPrologue(document) {
 function atlassianDocumentTextContent(document) {
   try {
     switch (document.type) {
+      case 'paragraph':
+        // content is optional in a paragraph.
+        if (document.content) return document.content.map(content => atlassianDocumentTextContent(content)).join('');
+        return '\n';
       case 'blockquote':
       case 'bulletList':
       case 'codeBlock':
@@ -185,7 +189,6 @@ function atlassianDocumentTextContent(document) {
       case 'panel':
       case 'doc':
       case 'expand':
-      case 'paragraph':
       case 'table':
       case 'tableRow':
       case 'tableCell':
