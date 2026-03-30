@@ -203,6 +203,8 @@ function atlassianDocumentTextContent(document) {
         return '\n';
       case 'media':
       case 'mediaGroup':
+      // Appears to just be an ID reference with no actual user content in the document itself.
+      case 'mediaInline':
       case 'mention':
         break;
       case 'rule':
