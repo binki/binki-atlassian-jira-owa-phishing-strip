@@ -9,8 +9,9 @@
 // ==/UserScript==
 
 (async () => {
-  const key = /[^?]*\/([A-Z]+-[0-9]+)(?:$|\?)/.exec(document.documentURI)[1];
-  if (!key) return;
+  const uriMatches = /[^?]*\/([A-Z]+-[0-9]+)(?:$|\?)/.exec(document.documentURI);
+  if (!uriMatches) return;
+  const key = uriMatches[1];
   while (true) {
     const issue = await (await assertFetch(new URL(`/rest/api/3/issue/${encodeURIComponent(key)}`, document.documentURI))).json();
     let changeMade = false;
