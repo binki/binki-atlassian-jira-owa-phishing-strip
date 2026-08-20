@@ -206,7 +206,10 @@ function atlassianDocumentTextContent(document) {
       // Appears to just be an ID reference with no actual user content in the document itself.
       case 'mediaInline':
       case 'mention':
-        break;
+        return '';
+        // Will render differently and is not relevant to this specific use case so just clobbering.
+      case 'date':
+        return '';
       case 'rule':
         return '\n\n\n';
       case 'text':
