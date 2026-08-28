@@ -21,7 +21,7 @@
         [false, true],
       ]) {
         try {
-          await assertFetch(`${issue.self}?${requestNoNotify ? 'notifyUsers=false&' : ''}`, document.documentURI), {
+          await assertFetch(`${issue.self}?${requestNoNotify ? 'notifyUsers=false&' : ''}`, {
             body: JSON.stringify({
               update: {
                 description: [
