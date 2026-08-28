@@ -21,7 +21,7 @@
         [false, true],
       ]) {
         try {
-          await assertFetch(new URL(`/rest/api/3/issue/${encodeURIComponent(key)}?${requestNoNotify ? 'notifyUsers=false&' : ''}`, document.documentURI), {
+          await assertFetch(`${issue.self}?${requestNoNotify ? 'notifyUsers=false&' : ''}`, document.documentURI), {
             body: JSON.stringify({
               update: {
                 description: [
