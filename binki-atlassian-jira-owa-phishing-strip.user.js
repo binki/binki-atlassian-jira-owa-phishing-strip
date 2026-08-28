@@ -204,6 +204,8 @@ function atlassianDocumentTextContent(document) {
       case 'tableRow':
       case 'tableCell':
       case 'tableHeader':
+      case 'taskItem':
+      case 'taskList':
         return document.content.map(content => atlassianDocumentTextContent(content)).join('');
       case 'inlineCard':
         // Maybe a card is supposed to have text content? Especially if it has JSONLD in it?
