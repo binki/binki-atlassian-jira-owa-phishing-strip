@@ -171,6 +171,16 @@ function removeEmptyPrologue(document) {
     if (!/^\s*$/v.test(atlassianDocumentTextContent(first))) break;
     document.content.splice(0, 1);
   }
+  // Edits fail if we empty the document out completely. Try creating something simple such as an empty paragraph.
+  if (!document.content.length) {
+    document.content.push({
+      type: 'paragraph',
+      content: [{
+        type: 'text',
+        text: ' ',
+      }],
+    });
+  }
 }
 
 function atlassianDocumentTextContent(document) {
