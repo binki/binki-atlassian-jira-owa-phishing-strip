@@ -225,6 +225,7 @@ function atlassianDocumentTextContent(document) {
         return '';
       case 'rule':
         return '\n\n\n';
+      case 'status':
       case 'text':
         return document.text;
       default:
